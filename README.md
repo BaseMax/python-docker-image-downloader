@@ -25,19 +25,17 @@ Browser  →  Flask  →  Docker Registry HTTP API v2
 
 ## Quick start (local Python)
 
+Requires [uv](https://docs.astral.sh/uv/) — `pip install uv` or `winget install astral-sh.uv`.
+
 ```bash
-# 1. Create & activate a virtual environment
-python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
+# 1. Sync dependencies into a managed virtual environment
+uv sync
 
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. (Optional) copy & edit environment variables
+# 2. (Optional) copy & edit environment variables
 cp .env.example .env
 
-# 4. Run the development server
-python app.py
+# 3. Run the development server
+uv run python app.py
 ```
 
 Open <http://localhost:5000> in your browser.
@@ -59,15 +57,27 @@ Open <http://localhost:5000>.
 
 ```
 .
-├── app.py                  # Flask routes
-├── docker_registry.py      # Docker Registry API v2 client
-├── requirements.txt
+├── app.py                          # Flask routes
+├── docker_registry/
+│   ├── __init__.py                 # Public API re-exports
+│   ├── client.py                   # DockerRegistry class (orchestration)
+│   ├── auth.py                     # Bearer-token authentication
+│   ├── manifest.py                 # Manifest fetch + platform resolution
+│   ├── blob.py                     # Blob download + layer decompression
+│   ├── archive.py                  # docker-save tar creation
+│   ├── parser.py                   # Image reference parsing + validation
+│   ├── constants.py                # Shared constants & media types
+│   └── exceptions.py               # DockerRegistryError
+├── pyproject.toml                  # uv / PEP 517 project metadata
+├── .python-version                 # Pins Python version for uv
 ├── Dockerfile
 ├── docker-compose.yml
 ├── .env.example
 ├── templates/
-│   └── index.html          # Single-page UI
+│   └── index.html                  # Markup only — links style.css + script.js
 └── static/
+    ├── style.css
+    ├── script.js
     └── logo.svg
 ```
 
