@@ -11,12 +11,10 @@ from typing import Tuple
 from .constants import DOCKER_HUB_REGISTRY
 from .exceptions import DockerRegistryError
 
-# Characters allowed in Docker image references
 _IMAGE_RE = re.compile(r"^[a-zA-Z0-9][a-zA-Z0-9._/:@\-]*$")
 
 
 # ── Validation ────────────────────────────────────────────────────────────────
-
 def validate_image_name(image: str) -> None:
     """Reject empty, oversized, or syntactically invalid image references."""
     if not image:
@@ -51,11 +49,10 @@ def validate_registry_host(host: str) -> None:
                 "invalid registry: private/reserved IP addresses are not allowed"
             )
     except ValueError:
-        pass  # Not an IP — that is fine
+        pass  # Not an IP, that is fine
 
 
 # ── Parsing ───────────────────────────────────────────────────────────────────
-
 def parse_image(image: str) -> Tuple[str, str, str]:
     """
     Parse an image reference into ``(registry, repository, tag_or_digest)``.
@@ -104,7 +101,6 @@ def parse_image(image: str) -> Tuple[str, str, str]:
 
 
 # ── Naming helpers ─────────────────────────────────────────────────────────────
-
 def format_repo_tag(image: str, ref: str) -> str:
     """
     Build a clean ``RepoTags`` entry for *manifest.json* inside a docker-save
