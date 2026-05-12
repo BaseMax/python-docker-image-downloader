@@ -1,6 +1,6 @@
 # Python Docker Image Downloader
 
-A web-based tool that lets you download Docker images as `.tar` files directly from any registry — **no Docker daemon required** on your machine. Load the downloaded file with `docker load -i image.tar`.
+A web-based tool that lets you download Docker images as `.tar` files directly from any registry, **no Docker daemon required** on your machine. Load the downloaded file with `docker load -i image.tar`.
 
 Useful when Docker Hub (or another registry) is blocked, or when you need to transfer images to an air-gapped system.
 
@@ -77,7 +77,7 @@ Open <http://localhost:5000>.
 
 | Method | Path | Query params | Description |
 |--------|------|-------------|-------------|
-| `GET` | `/` | — | Web UI |
+| `GET` | `/` | N/A | Web UI |
 | `GET` | `/platforms` | `name` | Returns available OS/arch platforms for a multi-arch image |
 | `GET` | `/image` | `name`, `os`, `arch`, `variant` | Downloads image as `docker save` `.tar` |
 

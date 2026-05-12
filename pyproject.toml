@@ -1,0 +1,22 @@
+[project]
+name = "python-docker-image-downloader"
+version = "1.0.0"
+description = "Web-based Docker image downloader, no Docker daemon required"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.0.0",
+    "requests>=2.31.0",
+    "gunicorn>=21.2.0",
+    "zstandard>=0.21.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.14.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
