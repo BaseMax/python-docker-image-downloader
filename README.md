@@ -25,7 +25,7 @@ Browser  →  Flask  →  Docker Registry HTTP API v2
 
 ## Quick start (local Python)
 
-Requires [uv](https://docs.astral.sh/uv/) — `pip install uv` or `winget install astral-sh.uv`.
+Requires [uv](https://docs.astral.sh/uv/), `pip install uv` or `winget install astral-sh.uv`.
 
 ```bash
 # 1. Sync dependencies into a managed virtual environment
@@ -74,7 +74,7 @@ Open <http://localhost:5000>.
 ├── docker-compose.yml
 ├── .env.example
 ├── templates/
-│   └── index.html                  # Markup only — links style.css + script.js
+│   └── index.html                  # Markup only, links style.css + script.js
 └── static/
     ├── style.css
     ├── script.js
