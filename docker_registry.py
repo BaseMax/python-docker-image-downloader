@@ -12,7 +12,6 @@ Handles:
 """
 
 import gzip
-import hashlib
 import ipaddress
 import json
 import logging

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120">
+
+  <!-- Container stacks (ship cargo) -->
+  <rect x="12"  y="58" width="22" height="16" rx="2" fill="#2496ED"/>
+  <rect x="38"  y="44" width="22" height="30" rx="2" fill="#2496ED"/>
+  <rect x="64"  y="50" width="22" height="24" rx="2" fill="#2496ED"/>
+  <rect x="90"  y="54" width="22" height="20" rx="2" fill="#2496ED"/>
+  <rect x="116" y="46" width="22" height="28" rx="2" fill="#2496ED"/>
+
+  <!-- Container highlight stripes -->
+  <rect x="12"  y="58" width="22" height="6" rx="2" fill="white" opacity="0.35"/>
+  <rect x="38"  y="44" width="22" height="6" rx="2" fill="white" opacity="0.35"/>
+  <rect x="64"  y="50" width="22" height="6" rx="2" fill="white" opacity="0.35"/>
+  <rect x="90"  y="54" width="22" height="6" rx="2" fill="white" opacity="0.35"/>
+  <rect x="116" y="46" width="22" height="6" rx="2" fill="white" opacity="0.35"/>
+
+  <!-- Ship deck -->
+  <rect x="4" y="74" width="152" height="10" rx="3" fill="#1a6fa8"/>
+
+  <!-- Ship hull -->
+  <path d="M8 84 L4 96 L156 96 L152 84 Z" fill="#1d5f99"/>
+
+  <!-- Water -->
+  <path d="M0 96 Q20 102 40 96 Q60 90 80 96 Q100 102 120 96 Q140 90 160 96 L160 120 L0 120 Z" fill="#b8d9f0"/>
+  <path d="M0 104 Q20 110 40 104 Q60 98 80 104 Q100 110 120 104 Q140 98 160 104 L160 120 L0 120 Z" fill="#d6ecf9"/>
+
+  <!-- Download arrow (above the containers) -->
+  <polygon points="80,4 94,24 66,24" fill="#2496ED"/>
+  <rect x="75" y="20" width="10" height="20" rx="2" fill="#2496ED"/>
+
+</svg>
