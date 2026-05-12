@@ -16,10 +16,10 @@ Browser  →  Flask  →  Docker Registry HTTP API v2
          ←  streams .tar to browser
 ```
 
-1. **Manifest fetch** – The backend authenticates (Bearer token) and pulls the image manifest. Multi-arch images return a *manifest list*; the backend picks the matching platform.
-2. **Blob downloads** – Each layer blob (gzip or zstd) is downloaded to a server-side temp directory and decompressed.
-3. **Archive creation** – Files are packaged into the standard `docker save` tar format (`manifest.json` + `<config>.json` + `<layer_id>/layer.tar`).
-4. **Streaming response** – The `.tar` is streamed to the browser with a `Content-Length` header so the progress bar works.
+1. **Manifest fetch**, The backend authenticates (Bearer token) and pulls the image manifest. Multi-arch images return a *manifest list*; the backend picks the matching platform.
+2. **Blob downloads**, Each layer blob (gzip or zstd) is downloaded to a server-side temp directory and decompressed.
+3. **Archive creation**, Files are packaged into the standard `docker save` tar format (`manifest.json` + `<config>.json` + `<layer_id>/layer.tar`).
+4. **Streaming response**, The `.tar` is streamed to the browser with a `Content-Length` header so the progress bar works.
 
 ---
 
